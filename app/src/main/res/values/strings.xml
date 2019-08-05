@@ -1,0 +1,19 @@
+<resources>
+    <string name="app_name">Travelmantics</string>
+    <string name="email_sign">Sign in with email</string>
+    <string name="google_sign">Sign in with Google</string>
+    <string name="hint_email">Email</string>
+    <string name="hint_user">First &amp; last name</string>
+    <string name="hint_password">Password</string>
+    <string name="btn_signup">SAVE</string>
+    <string name="add_travel">SAVE</string>
+    <string name="add_user_travel">New Travel Deals</string>
+    <string name="view_travels">View deals</string>
+    <string name="hint_place">Deal Title</string>
+    <string name="hint_mile">Price</string>
+    <string name="hint_place_desc">Description</string>
+    <string name="admin_btn">Select Image</string>
+    <string name="delete_travels">Delete Deal</string>
+    <string name="log_out">Log out</string>
+
+</resources>

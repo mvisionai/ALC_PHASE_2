@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".SignupActivity">
+
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/place_group"
+        android:layout_width="290dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="50dp"
+        app:layout_constraintBottom_toTopOf="@+id/mile_group"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <EditText
+            android:id="@+id/txtViewPlace"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="5dp"
+            android:drawablePadding="5dp"
+            android:drawableTint="@color/colorAccent"
+            android:hint="@string/hint_place"
+            android:inputType="textPersonName"
+            android:maxLines="1"
+            android:paddingBottom="10dp"
+            android:shadowColor="#fff"
+            android:textColor="@color/colorText"
+            android:textColorHighlight="#fff"
+            android:textColorHint="#fff" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/mile_group"
+        android:layout_width="290dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp"
+        app:layout_constraintBottom_toTopOf="@+id/description_group"
+        app:layout_constraintEnd_toEndOf="@id/place_group"
+        app:layout_constraintStart_toStartOf="@id/place_group"
+        app:layout_constraintTop_toBottomOf="@id/place_group">
+
+        <EditText
+            android:id="@+id/txtViewMile"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:drawablePadding="5dp"
+            android:drawableTint="@color/colorAccent"
+            android:hint="@string/hint_mile"
+            android:inputType="numberDecimal"
+            android:maxLines="1"
+            android:paddingBottom="10dp"
+            android:textColor="@color/colorText"
+            android:textColorHint="#fff" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/description_group"
+        android:layout_width="290dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp"
+
+        android:textColorHint="@color/colorAccent"
+        app:layout_constraintBottom_toTopOf="@+id/buttonSignup"
+        app:layout_constraintEnd_toEndOf="@id/mile_group"
+        app:layout_constraintStart_toStartOf="@id/mile_group"
+        app:layout_constraintTop_toBottomOf="@id/mile_group">
+
+        <EditText
+            android:id="@+id/textViewPlaceDes"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:drawablePadding="5dp"
+            android:drawableTint="@color/colorAccent"
+            android:hint="@string/hint_place_desc"
+            android:inputType="textMultiLine"
+            android:maxLines="1"
+            android:paddingBottom="10dp"
+            android:textColor="@color/colorText"
+            android:textColorHint="#fff" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <Button
+        android:id="@+id/buttonSaveDeal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginBottom="16dp"
+        android:padding="5dp"
+        android:text="@string/admin_btn"
+        android:textColor="@color/colorText"
+        app:layout_constraintBottom_toTopOf="@+id/imageViewSelected"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/description_group" />
+
+    <ImageView
+        android:id="@+id/imageViewSelected"
+        android:layout_width="0dp"
+        android:layout_height="200dp"
+        android:layout_marginTop="24dp"
+        android:scaleType="fitXY"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="@+id/description_group"
+        app:layout_constraintStart_toStartOf="@+id/description_group"
+        app:layout_constraintTop_toBottomOf="@+id/buttonSaveDeal"
+        app:srcCompat="@android:drawable/screen_background_light_transparent" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

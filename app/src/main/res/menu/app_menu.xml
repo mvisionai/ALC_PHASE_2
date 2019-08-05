@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+     Copyright (C) 2016 The Android Open Source Project
+
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+
+          http://www.apache.org/licenses/LICENSE-2.0
+
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.@mipmap/ic_check_black
+-->
+<!-- The menu found in the main multi-day forecast  -->
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".JournalWrite">
+    <item
+        android:id="@+id/saveTravel"
+        android:orderInCategory="100"
+        android:title="@string/add_travel"
+        app:showAsAction="always" />
+
+    <item
+        android:id="@+id/viewTravel"
+        android:orderInCategory="100"
+        android:title="@string/view_travels"
+        android:icon="@drawable/page_view"
+        app:showAsAction="never" />
+
+    <item
+        android:id="@+id/deleteTravel"
+        android:orderInCategory="100"
+        android:title="@string/delete_travels"
+        android:icon="@drawable/page_view"
+        app:showAsAction="never" />
+
+    <item
+        android:id="@+id/logOut"
+        android:orderInCategory="100"
+        android:title="@string/log_out"
+        android:icon="@drawable/page_view"
+        app:showAsAction="never" />
+
+</menu>
