@@ -24,6 +24,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.ProgressBar;
 import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
@@ -52,6 +53,7 @@ public class AdminActivity extends AppCompatActivity implements View.OnClickList
     private  TravelEntity entity;
     private  static  final  int PICTURE_RESULT=42;
     public static final int MY_PERMISSIONS_REQUEST_READ_EXTERNAL_STORAGE = 123;
+    private ProgressBar progressBar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -63,6 +65,8 @@ public class AdminActivity extends AppCompatActivity implements View.OnClickList
         editTextDescription =(EditText) findViewById(R.id.textViewPlaceDes);
         imageViewImg = (ImageView) findViewById(R.id.imageViewSelected);
         buttonSave =(Button)  findViewById(R.id.buttonSaveDeal);
+
+        progressBar = (ProgressBar) findViewById(R.id.progressBar);
 
 
         buttonSave.setOnClickListener(new View.OnClickListener() {
@@ -90,6 +94,10 @@ public class AdminActivity extends AppCompatActivity implements View.OnClickList
 
             entity =  new TravelEntity();
 
+        }else{
+
+            showImage(entity.getImage());
+
         }
 
         this.entity=entity;
@@ -97,6 +105,7 @@ public class AdminActivity extends AppCompatActivity implements View.OnClickList
         editTextPlace.setText(entity.getPlace());
         editTextMile.setText(entity.getMiles());
         editTextDescription.setText(entity.getDescription());
+
 
 
     }
@@ -168,10 +177,12 @@ public class AdminActivity extends AppCompatActivity implements View.OnClickList
         if (checkPermissionREAD_EXTERNAL_STORAGE(this)) {
             if (requestCode==PICTURE_RESULT && resultCode==RESULT_OK){
 
-                imageViewImg.setVisibility(View.VISIBLE);
+
 
                 final Uri imageUri= data.getData();
                 //imageViewImg.setImageURI(imageUri);
+
+                progressBar.setVisibility(View.VISIBLE);
                final StorageReference storageReference = FirebaseUtil.storageReference.child(imageUri.getLastPathSegment());
                 storageReference.putFile(imageUri).addOnSuccessListener(this, new OnSuccessListener<UploadTask.TaskSnapshot>() {
                     @Override
@@ -332,8 +343,13 @@ public class AdminActivity extends AppCompatActivity implements View.OnClickList
 
         if (url !=null && url.isEmpty()==false){
 
+
+
             int width= Resources.getSystem().getDisplayMetrics().widthPixels;
             Picasso.get().load(url).resize(width,width*2/3).centerCrop().into(imageViewImg);
+
+            progressBar.setVisibility(View.GONE);
+            imageViewImg.setVisibility(View.VISIBLE);
 
 
         }
